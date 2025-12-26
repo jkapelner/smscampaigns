@@ -222,23 +222,6 @@ ALLOWED_ORIGINS=http://localhost:3000  # CORS allowed origins
 
 ### Backend Deployment
 
-1. Build the TypeScript code:
-   ```bash
-   cd server
-   npm run build
-   ```
-
-2. Set production environment variables
-
-3. Use a process manager (PM2 recommended):
-   ```bash
-   pm2 start dist/server.js --name smscampaign-api
-   ```
-
-4. Set up reverse proxy (nginx) with SSL/TLS
-
-5. Monitor logs and performance
-
 See [Backend README](./server/README.md) for detailed deployment instructions.
 
 ## Project Status
