@@ -16,7 +16,7 @@ let isProcessing = false;
 
 function randomStatus(): MessageStatus {
   const random = Math.random();
-  return random < 0.1 ? MessageStatus.UNDELIVERABLE : MessageStatus.SUCCESS;
+  return random < 0.07 ? MessageStatus.UNDELIVERABLE : MessageStatus.SUCCESS;
 }
 
 async function processJob(job: JobQueue): Promise<void> {
