@@ -3,7 +3,7 @@ import { sql, eq } from 'drizzle-orm';
 import { campaigns } from './campaign.js';
 import { contacts } from './contact.js';
 import { db } from '../config/database.js';
-import { MessageStatus, MESSAGE_STATUS_VALUES } from '../types/enums.js';
+import { MessageStatus } from '../types/enums.js';
 
 export const messages = sqliteTable(
   'messages',
@@ -18,7 +18,7 @@ export const messages = sqliteTable(
       .references(() => contacts.id, { onDelete: 'cascade' }),
     message: text('message').notNull(),
     status: text('status', {
-      enum: MESSAGE_STATUS_VALUES,
+      enum: ['pending', 'success', 'undeliverable', 'blocked'],
     }).notNull(),
     timestamp: integer('timestamp', { mode: 'timestamp' })
       .notNull()

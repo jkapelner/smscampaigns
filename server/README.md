@@ -372,7 +372,7 @@ Content-Type: application/json
 
 **HMAC Signature Generation:**
 ```javascript
-const crypto = require('crypto');
+import crypto from 'crypto';
 const payload = JSON.stringify(requestBody);
 const signature = crypto
   .createHmac('sha256', WEBHOOK_SECRET)
@@ -643,20 +643,6 @@ kill -9 $(lsof -ti:3000)
 
 ### JWT_SECRET Not Set
 Ensure your `.env` file has a `JWT_SECRET` defined. The application will not start without it.
-
-## Production Deployment
-
-1. Set `NODE_ENV=production` in your environment
-2. Generate a strong `JWT_SECRET` (use a password generator)
-3. Configure `ALLOWED_ORIGINS` for your frontend domain
-4. Use a process manager like PM2:
-   ```bash
-   npm install -g pm2
-   pm2 start dist/server.js --name smscampaign-api
-   ```
-5. Set up a reverse proxy (nginx/Apache) with HTTPS
-6. Consider using a managed database instead of SQLite for production
-7. Implement proper logging and monitoring
 
 ## API Response Codes
 

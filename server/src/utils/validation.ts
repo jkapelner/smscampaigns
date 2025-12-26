@@ -1,3 +1,5 @@
+import {parsePhoneNumberWithError} from "libphonenumber-js";
+
 export function isValidEmail(email: string): boolean {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
@@ -42,8 +44,7 @@ export function validatePhoneNumber(phoneNumber: string): {
   error?: string;
 } {
   try {
-    const { parsePhoneNumberWithError } = require('libphonenumber-js');
-    const parsedNumber = parsePhoneNumberWithError(phoneNumber);
+    const parsedNumber = parsePhoneNumberWithError(phoneNumber, 'US');
 
     if (!parsedNumber.isValid()) {
       return { valid: false, error: 'Invalid phone number' };
@@ -51,6 +52,6 @@ export function validatePhoneNumber(phoneNumber: string): {
 
     return { valid: true };
   } catch (error) {
-    return { valid: false, error: 'Invalid phone number' };
+    return { valid: false, error: `Invalid phone number: ${error.toString()}` };
   }
 }
