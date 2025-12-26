@@ -282,4 +282,4 @@ For detailed information about specific components:
 
 ---
 
-**Note**: This is a learning/demonstration project. For production use, consider implementing real SMS providers (Twilio, AWS SNS, etc.) and additional production-grade features like comprehensive logging, monitoring, and backup strategies.
+**Note**: This is a learning/demonstration project. For production use, consider implementing real SMS providers (Twilio, Telnyx, etc.), serverless deployment (i.e. aws lambda), a postgresql database, redis cache (and sessions), message queue, and additional production-grade features like comprehensive logging, monitoring, and backup strategies.
