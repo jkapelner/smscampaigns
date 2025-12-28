@@ -91,6 +91,7 @@ async function seed() {
     console.log('Test credentials:');
     console.log('  Email: test@example.com');
     console.log('  Password: Test1234');
+    console.log('  API Key:', apiKey);
   } catch (error) {
     console.error('Seed error:', error);
     throw error;

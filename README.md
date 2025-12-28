@@ -108,13 +108,18 @@ smscampaign/
    npm run db:push
    npm run seed
    ```
+   
+   Seed command will print default user credentials.  
+
 
 5. **Start the development server:**
    ```bash
    npm run dev
    ```
 
-   The API will be available at `http://localhost:3000`
+   The API will be available at `http://localhost:3000`  
+   You can test the endpoints using Postman or curl using the default api key in the x-api-key header.  
+
 
 6. **Run tests:**
    ```bash
@@ -144,7 +149,9 @@ smscampaign/
    npm run dev
    ```
 
-   The application will be available at `http://localhost:5173`
+   The application will be available at `http://localhost:5173`  
+   You can login with the default user credentials printed during backend seeding.  
+
 
 5. **Build for production:**
    ```bash
